@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 
 interface InputValueProps {
@@ -10,7 +8,10 @@ interface InputValueProps {
 export default function InputBox({ text, onChange }: InputValueProps) {
   return (
     <div className="flex flex-col">
-      <label className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">
+      <label
+        htmlFor="input"
+        className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2"
+      >
         Enter text
       </label>
       <textarea
