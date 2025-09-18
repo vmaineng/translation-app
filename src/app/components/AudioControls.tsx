@@ -86,15 +86,20 @@ export function AudioControls({
       <button
         onClick={isRecording ? stopRecording : startRecording}
         className={isRecording ? "bg-red-100 border-red-300" : ""}
+        data-testid="record-button"
       >
         {isRecording ? (
-          <FaSquare className="h-4 w-4" />
+          <FaSquare className="h-4 w-4" data-testid="square-icon" />
         ) : (
-          <FaMicrophone className="h-4 w-4" />
+          <FaMicrophone className="h-4 w-4" data-testid="mic-icon" />
         )}
       </button>
-      <button onClick={speakText} disabled={!textToSpeak.trim()}>
-        <FiVolume2 className="h-4 w-4" />
+      <button
+        onClick={speakText}
+        disabled={!textToSpeak.trim()}
+        data-testid="speak-button"
+      >
+        <FiVolume2 className="h-4 w-4" data-testid="volume-icon" />
       </button>
     </div>
   );
