@@ -6,8 +6,14 @@ import { useState } from "react";
 export default function Home() {
   const [input, setInput] = useState<string>("");
   const [output, setOutput] = useState<string>("");
+  const [error, setError] = useState<string>("");
 
   const handleTranslate = () => {
+    if (!input.trim()) {
+      setError("Please enter something...");
+      return;
+    }
+    setError("");
     setOutput(input.split("").reverse().join(""));
   };
 
@@ -18,7 +24,12 @@ export default function Home() {
           🌐 Translation App
         </h1>
         <div className="grid md:grid-cols-2 gap-6">
-          <InputBox text={input} onChange={(e) => setInput(e.target.value)} />
+          <div>
+            <InputBox text={input} onChange={(e) => setInput(e.target.value)} />
+            {error && (
+              <p className="mt-2 text-sm text-red-500 font-medium">{error}</p>
+            )}
+          </div>
           <OutputBox value={output} />
         </div>
         <div className="flex justify-center">
@@ -33,3 +44,6 @@ export default function Home() {
     </div>
   );
 }
+
+//add in OpenAPI AI for text's translation
+//think about how to add audio as the next layer
