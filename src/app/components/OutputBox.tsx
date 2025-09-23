@@ -5,12 +5,6 @@ interface OutBoxValueProps {
 export default function OutputBox({ value }: OutBoxValueProps) {
   return (
     <div className="flex flex-col">
-      <label
-        htmlFor="output"
-        className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2"
-      >
-        Translated Text
-      </label>
       <textarea
         id="output"
         value={value}
