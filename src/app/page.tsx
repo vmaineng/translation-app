@@ -190,6 +190,3 @@ export default function Home() {
     </div>
   );
 }
-
-//add in OpenAPI AI for text's translation
-//think about how to add audio as the next layer
